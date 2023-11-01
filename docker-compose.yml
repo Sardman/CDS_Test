@@ -34,3 +34,12 @@ services:
       - php-fpm
     restart: always
 
+  react:
+    container_name: react
+    build:
+      context: ./docker/react
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
